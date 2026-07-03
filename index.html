@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BirchSoft.dev | Systemy Cloud & Back-end Engineering</title>
+    <title>BirchSoft.dev | Cloud &amp; Back-end Engineering</title>
+    <link rel="icon" type="image/png" href="logo-icon.png">
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
@@ -35,7 +36,7 @@
             content: '';
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(59, 232, 176, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(59, 232, 176, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
@@ -49,6 +50,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -61,19 +64,21 @@
             letter-spacing: -0.5px;
         }
 
-        /* Zastępcze miniaturowe logo CSS odwzorowujące dostarczoną grafikę */
         .logo-icon {
-            width: 32px;
-            height: 32px;
-            border: 2px solid var(--accent-green);
-            border-radius: 50%;
-            position: relative;
-            background: radial-gradient(circle, var(--accent-green) 20%, transparent 25%);
-            background-size: 8px 8px;
+            width: 40px;
+            height: 40px;
+            display: block;
+            object-fit: contain;
         }
 
         .logo span {
             color: var(--accent-green);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -86,6 +91,39 @@
 
         nav a:hover, nav a.active {
             color: var(--accent-green);
+        }
+
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 2rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid rgba(240, 244, 244, 0.1);
+        }
+
+        .lang-switch button {
+            background: transparent;
+            border: 1px solid rgba(59, 232, 176, 0.25);
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-switch button:hover {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .lang-switch button.active {
+            background: var(--accent-green);
+            color: #0b1314;
+            border-color: var(--accent-green);
+            font-weight: 700;
         }
 
         main {
@@ -254,6 +292,58 @@
             margin-bottom: 0.5rem;
         }
 
+        .timeline-item p.desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 750px;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 2.5rem;
+        }
+
+        .cert-list .tag {
+            font-size: 0.85rem;
+            padding: 6px 14px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-item {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(240, 244, 244, 0.03);
+        }
+
+        .contact-item .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-item a, .contact-item span.value {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1rem;
+            word-break: break-word;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-green);
+        }
+
         footer {
             max-width: 1200px;
             margin: 0 auto;
@@ -264,63 +354,324 @@
             border-top: 1px solid rgba(240, 244, 244, 0.05);
         }
 
+        [data-lang-block] { display: none; }
+        [data-lang-block].active { display: block; }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             header { flex-direction: column; gap: 1.5rem; text-align: center; }
-            nav a { margin: 0 0.75rem; }
+            nav { justify-content: center; }
+            nav a { margin: 0 0.6rem; }
+            .lang-switch { margin-left: 1rem; padding-left: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <div class="logo-icon"></div>
-            BirchSoft<span>.dev</span>
-        </div>
-        <nav>
-            <a href="#o-nas">O nas</a>
-            <a href="#specjalizacje">Specjalizacje</a>
-            <a href="#doswiadczenie">Doświadczenie</a>
-            <a href="#kontakt">Kontakt</a>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" style="border: none;">
-            <h1>Projektujemy <span>wydajną architekturę</span> back-endową.</h1>
-            <p>BirchSoft.dev to butikowe studio inżynierii oprogramowania. Przekształcamy złożone wymagania biznesowe w niezawodne systemy chmurowe i aplikacje skalowalne globalnie.</p>
-            <a href="#kontakt" class="cta-button">Rozpocznij projekt</a>
-        </section>
-
-        <!-- Profil firmy / O nas -->
-        <section id="o-nas">
-            <h2>O nas</h2>
-            <div class="profile-summary">
-                <p>Jesteśmy zespołem doświadczonych konsultantów i inżynierów back-end. Specjalizujemy się w ekosystemie .NET, architekturze mikrousług oraz rozwiązaniach chmurowych Microsoft Azure. Nasze podejście łączy rygorystyczne standardy czystego kodu (Clean Architecture) z pełną automatyzacją procesów wdrożeniowych CI/CD.</p>
+    <!-- =================== POLSKA WERSJA =================== -->
+    <div data-lang-block data-lang="pl" class="active">
+        <header>
+            <div class="logo">
+                <img src="logo-icon.png" alt="BirchSoft.dev logo" class="logo-icon">
+                BirchSoft<span>.dev</span>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>Enterprise Cloud</h3>
-                    <p>Projektowanie i migracja systemów do chmury obliczeniowej z optymalizacją kosztów i wysoką dostępnością (High Availability).</p>
-                    <div class="tech-tags">
-                        <span class="tag">Azure</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">Docker</span>
+            <nav>
+                <a href="#o-mnie">O mnie</a>
+                <a href="#specjalizacje">Specjalizacje</a>
+                <a href="#doswiadczenie">Doświadczenie</a>
+                <a href="#kontakt">Kontakt</a>
+                <span class="lang-switch">
+                    <button type="button" class="active" data-set-lang="pl">PL</button>
+                    <button type="button" data-set-lang="en">EN</button>
+                </span>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" style="border: none;">
+                <h1>Projektuję <span>wydajną architekturę</span> back-endową.</h1>
+                <p>BirchSoft.dev to butikowa praktyka inżynierii oprogramowania. Przekształcam złożone wymagania biznesowe w niezawodne systemy chmurowe i aplikacje skalowalne globalnie.</p>
+                <a href="#kontakt" class="cta-button">Rozpocznij projekt</a>
+            </section>
+
+            <section id="o-mnie">
+                <h2>O mnie</h2>
+                <div class="profile-summary">
+                    <p>Jestem konsultantem i inżynierem back-end specjalizującym się w ekosystemie .NET, chmurze Microsoft Azure oraz inżynierii danych. Pracuję w międzynarodowych zespołach Scrum przy projektach dla dużych organizacji z sektora energetycznego, dostarczając API, funkcje chmurowe i rozwiązania integrujące dane z wielu źródeł. Moje podejście łączy rygorystyczne standardy czystego kodu z pełną automatyzacją procesów CI/CD.</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Enterprise Cloud</h3>
+                        <p>Projektuję i wdrażam rozwiązania w Microsoft Azure — od Azure Functions i Durable Functions po Data Factory i Service Bus — z naciskiem na wysoką dostępność i optymalizację kosztów.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Azure</span>
+                            <span class="tag">Azure Functions</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Robust Back-end</h3>
+                        <p>Buduję i rozwijam API klasy enterprise w C# / .NET, integrując dane z wielu źródeł i utrzymując wysoką niezawodność pod dużym obciążeniem transakcyjnym.</p>
+                        <div class="tech-tags">
+                            <span class="tag">.NET Core</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">REST API</span>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <h3>Robust Back-end</h3>
-                    <p>Budowa rozproszonych API o niskich opóźnieniach, odpornych na krytyczne obciążenia transakcyjne.</p>
-                    <div class="tech-tags">
-                        <span class="tag">.NET Core</span>
-                        <span class="tag">C#</span>
-                        <span class="tag">REST API</span>
+            </section>
+
+            <section id="specjalizacje">
+                <h2>Specjalizacje</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Data Engineering</h3>
+                        <p>Projektuję potoki danych i przepływy w Azure Synapse Analytics oraz Data Factory, integrując dane z wielu źródeł na potrzeby raportowania i analityki.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Synapse</span>
+                            <span class="tag">Data Factory</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>DevOps &amp; Automatyzacja</h3>
+                        <p>Wdrażam praktyki DevOps oraz pipeline'y CI/CD, zapewniając ciągłą dostawę i szybkie, bezpieczne wdrożenia.</p>
+                        <div class="tech-tags">
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">Azure DevOps</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Python &amp; Skryptowanie</h3>
+                        <p>Wykorzystuję Pythona do automatyzacji procesów, integracji danych i wsparcia rozwiązań backendowych.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Automatyzacja</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Full-Stack Support</h3>
+                        <p>Uczestniczę też w projektach pełnostackowych, tworząc interfejsy wspierające systemy backendowe i integrujące dane z wielu źródeł.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Angular</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Specjalizacje techniczne -->
-        <section id="specjalizacje">
+            <section id="doswiadczenie">
+                <h2>Doświadczenie</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 — obecnie</div>
+                        <div class="timeline-title">Konsultant / Inżynier Back-end</div>
+                        <div class="timeline-company">Projekty dla globalnej korporacji z sektora energetycznego</div>
+                        <p class="desc">Pracuję w międzynarodowym zespole Scrum przy projektach dla dużej amerykańskiej korporacji z branży energetycznej i naftowej. Odpowiadam za rozwój i utrzymanie API w środowisku Microsoft Azure oraz rozwiązywanie zgłoszeń użytkowników. Uczestniczyłem w projekcie budowy rozwiązania typu shale &amp; tight, obejmującego zarówno backend, jak i frontend, integrującego dane z wielu źródeł.</p>
+                    </div>
+                </div>
+
+                <div class="cert-list">
+                    <span class="tag">Azure Fundamentals (AZ-900)</span>
+                    <span class="tag">Azure Developer Associate (AZ-204)</span>
+                    <span class="tag">DevOps Engineer Expert (AZ-400)</span>
+                    <span class="tag">Azure AI Fundamentals (AI-900)</span>
+                    <span class="tag">PCAP — Certified Associate Python Programmer</span>
+                </div>
+            </section>
+
+            <section id="kontakt">
+                <h2>Kontakt</h2>
+                <div class="profile-summary" style="margin-bottom: 1rem;">
+                    <p>Pracujesz nad projektem wymagającym solidnej architektury chmurowej lub backendowej? Napisz — chętnie porozmawiam o szczegółach.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="label">Email</div>
+                        <a class="js-email" href="#" data-user="office" data-domain="birchsoft.dev">(loading…)</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Lokalizacja</div>
+                        <span class="value">Warszawa, Polska</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 BirchSoft.dev — Wszelkie prawa zastrzeżone.</p>
+        </footer>
+    </div>
+
+    <!-- =================== ENGLISH VERSION =================== -->
+    <div data-lang-block data-lang="en">
+        <header>
+            <div class="logo">
+                <img src="logo-icon.png" alt="BirchSoft.dev logo" class="logo-icon">
+                BirchSoft<span>.dev</span>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+                <span class="lang-switch">
+                    <button type="button" data-set-lang="pl">PL</button>
+                    <button type="button" class="active" data-set-lang="en">EN</button>
+                </span>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" style="border: none;">
+                <h1>I design <span>high-performance</span> back-end architecture.</h1>
+                <p>BirchSoft.dev is a boutique software engineering practice. I turn complex business requirements into reliable cloud systems and applications that scale globally.</p>
+                <a href="#contact" class="cta-button">Start a project</a>
+            </section>
+
+            <section id="about">
+                <h2>About</h2>
+                <div class="profile-summary">
+                    <p>I'm a back-end consultant and engineer specializing in the .NET ecosystem, Microsoft Azure, and data engineering. I work in international Scrum teams on projects for large organizations in the energy sector, delivering APIs, cloud functions, and solutions that integrate data from multiple sources. My approach combines strict clean-code standards with fully automated CI/CD delivery.</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Enterprise Cloud</h3>
+                        <p>I design and deploy solutions on Microsoft Azure — from Azure Functions and Durable Functions to Data Factory and Service Bus — with a focus on high availability and cost optimization.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Azure</span>
+                            <span class="tag">Azure Functions</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Robust Back-end</h3>
+                        <p>I build and maintain enterprise-grade APIs in C# / .NET, integrating data from multiple sources while keeping reliability high under heavy transactional load.</p>
+                        <div class="tech-tags">
+                            <span class="tag">.NET Core</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="expertise">
+                <h2>Expertise</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Data Engineering</h3>
+                        <p>I design data pipelines and flows in Azure Synapse Analytics and Data Factory, integrating data from multiple sources for reporting and analytics.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Synapse</span>
+                            <span class="tag">Data Factory</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>DevOps &amp; Automation</h3>
+                        <p>I implement DevOps practices and CI/CD pipelines, ensuring continuous delivery and fast, safe deployments.</p>
+                        <div class="tech-tags">
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">Azure DevOps</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Python &amp; Scripting</h3>
+                        <p>I use Python for process automation, data integration, and support of back-end solutions.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Full-Stack Support</h3>
+                        <p>I also take part in full-stack projects, building interfaces that support back-end systems and integrate data from multiple sources.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Angular</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 — present</div>
+                        <div class="timeline-title">Consultant / Back-end Engineer</div>
+                        <div class="timeline-company">Projects for a global energy sector corporation</div>
+                        <p class="desc">I work in an international Scrum team on projects for a large US energy and oil corporation. I'm responsible for developing and maintaining APIs within the Microsoft Azure environment and resolving user-reported issues. I took part in building a shale &amp; tight solution covering both back-end and front-end, integrating data from multiple sources.</p>
+                    </div>
+                </div>
+
+                <div class="cert-list">
+                    <span class="tag">Azure Fundamentals (AZ-900)</span>
+                    <span class="tag">Azure Developer Associate (AZ-204)</span>
+                    <span class="tag">DevOps Engineer Expert (AZ-400)</span>
+                    <span class="tag">Azure AI Fundamentals (AI-900)</span>
+                    <span class="tag">PCAP — Certified Associate Python Programmer</span>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <div class="profile-summary" style="margin-bottom: 1rem;">
+                    <p>Working on a project that needs solid cloud or back-end architecture? Get in touch — I'd be happy to talk through the details.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="label">Email</div>
+                        <a class="js-email" href="#" data-user="office" data-domain="birchsoft.dev">(loading…)</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Location</div>
+                        <span class="value">Warsaw, Poland</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 BirchSoft.dev — All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            document.querySelectorAll('.js-email').forEach(function (el) {
+                var user = el.getAttribute('data-user');
+                var domain = el.getAttribute('data-domain');
+                var address = user + '@' + domain;
+                el.href = 'mailto:' + address;
+                el.textContent = address;
+            });
+        })();
+
+        (function () {
+            var blocks = document.querySelectorAll('[data-lang-block]');
+            var buttons = document.querySelectorAll('[data-set-lang]');
+
+            function setLang(lang) {
+                blocks.forEach(function (b) {
+                    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+                });
+                document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+                    btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+                });
+                document.documentElement.setAttribute('lang', lang);
+            }
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    setLang(btn.getAttribute('data-set-lang'));
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
