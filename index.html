@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +186,7 @@
 
         .hero h1 span {
             background: linear-gradient(135deg, var(--text-main) 30%, var(--accent-green));
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -474,7 +475,7 @@
 <body>
 
     <!-- =================== POLSKA WERSJA =================== -->
-    <div data-lang-block data-lang="pl" class="active">
+    <div data-lang-block data-lang="pl">
         <header>
             <div class="header-top">
                 <div class="logo">
@@ -493,8 +494,8 @@
                     <a href="#doswiadczenie">Doświadczenie</a>
                     <a href="#kontakt">Kontakt</a>
                     <span class="lang-switch">
-                        <button type="button" class="active" data-set-lang="pl">PL</button>
-                        <button type="button" data-set-lang="en">EN</button>
+                        <button type="button" class="active" data-set-lang="en">EN</button>
+                        <button type="button" data-set-lang="pl">PL</button>
                     </span>
                 </div>
             </nav>
@@ -510,23 +511,28 @@
             <section id="o-mnie">
                 <h2>O mnie</h2>
                 <div class="profile-summary">
-                    <p>Jestem konsultantem i inżynierem back-end specjalizującym się w ekosystemie .NET, chmurze Microsoft Azure oraz inżynierii danych. Pracuję w międzynarodowych zespołach Scrum przy projektach dla dużych organizacji z sektora energetycznego, dostarczając API, funkcje chmurowe i rozwiązania integrujące dane z wielu źródeł. Moje podejście łączy rygorystyczne standardy czystego kodu z pełną automatyzacją procesów CI/CD.</p>
+                    <p>Senior programista back-end oraz konsultant chmurowy, specjalizujący się w Microsoft Azure, architekturze API i integracjach dla dużych organizacji. Od 2026 roku prowadzę własną firmę – Birchsoft.dev. Projektuję i dostarczam w niej skalowalne rozwiązania chmurowe, automatyzacje oraz usługi integracyjne dla klientów z sektora energetycznego, przemysłowego i technologicznego.</p>
+                    <p style="margin-top: 1.25rem;">Mam ponad pięcioletnie doświadczenie komercyjne zdobyte w Avanade. Pracowałem tam dla dużej korporacji z branży energetycznej i naftowej, budując systemy oparte na Azure Functions (w tym Durable Functions), Azure Data Factory, Service Bus, Synapse, OSDU oraz Databricks. Projektuję, rozwijam i utrzymuję złożone interfejsy API, integracje oraz potoki przetwarzania danych w środowiskach o wysokiej dostępności.</p>
+                    <p style="margin-top: 1.25rem;">Zanim trafiłem do branży IT, przez 28 lat służyłem w Siłach Powietrznych RP, koordynując wojskowy ruch lotniczy oraz pracując przy reagowaniu kryzysowym w Ministerstwie Obrony Narodowej — to doświadczenie ukształtowało moje podejście do inżynierii: dyscyplinę, odpowiedzialność i skuteczne podejmowanie decyzji pod presją.</p>
                 </div>
                 <div class="grid">
                     <div class="card">
                         <h3>Enterprise Cloud</h3>
-                        <p>Projektuję i wdrażam rozwiązania w Microsoft Azure — od Azure Functions i Durable Functions po Data Factory i Service Bus — z naciskiem na wysoką dostępność i optymalizację kosztów.</p>
+                        <p>Projektuję i wdrażam rozwiązania w Microsoft Azure — od Azure Functions (w tym Durable Functions) po Data Factory, Service Bus, Synapse, OSDU i Databricks — z naciskiem na wysoką dostępność i optymalizację kosztów.</p>
                         <div class="tech-tags">
                             <span class="tag">Azure</span>
                             <span class="tag">Azure Functions</span>
+                            <span class="tag">Databricks</span>
+                            <span class="tag">OSDU</span>
                         </div>
                     </div>
                     <div class="card">
                         <h3>Robust Back-end</h3>
-                        <p>Buduję i rozwijam API klasy enterprise w C# / .NET, integrując dane z wielu źródeł i utrzymując wysoką niezawodność pod dużym obciążeniem transakcyjnym.</p>
+                        <p>Buduję i utrzymuję API klasy enterprise w C#, ASP.NET i Blazor, integrując dane z wielu źródeł i utrzymując wysoką niezawodność pod dużym obciążeniem transakcyjnym.</p>
                         <div class="tech-tags">
-                            <span class="tag">.NET Core</span>
+                            <span class="tag">ASP.NET</span>
                             <span class="tag">C#</span>
+                            <span class="tag">Blazor</span>
                             <span class="tag">REST API</span>
                         </div>
                     </div>
@@ -538,11 +544,13 @@
                 <div class="grid">
                     <div class="card">
                         <h3>Data Engineering</h3>
-                        <p>Projektuję potoki danych i przepływy w Azure Synapse Analytics oraz Data Factory, integrując dane z wielu źródeł na potrzeby raportowania i analityki.</p>
+                        <p>Projektuję potoki danych i przepływy z wykorzystaniem Azure Synapse Analytics, Data Factory oraz Databricks, integrując dane z wielu źródeł — w tym OSDU — na potrzeby raportowania i analityki.</p>
                         <div class="tech-tags">
                             <span class="tag">Synapse</span>
                             <span class="tag">Data Factory</span>
+                            <span class="tag">Databricks</span>
                             <span class="tag">SQL</span>
+                            <span class="tag">OSDU</span>
                         </div>
                     </div>
                     <div class="card">
@@ -564,8 +572,9 @@
                     </div>
                     <div class="card">
                         <h3>Full-Stack Support</h3>
-                        <p>Uczestniczę też w projektach pełnostackowych, tworząc interfejsy wspierające systemy backendowe i integrujące dane z wielu źródeł.</p>
+                        <p>Uczestniczę też w projektach pełnostackowych, tworząc interfejsy w Blazor i Angular, które wspierają systemy backendowe i integrują dane z wielu źródeł.</p>
                         <div class="tech-tags">
+                            <span class="tag">Blazor</span>
                             <span class="tag">Angular</span>
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
@@ -578,18 +587,30 @@
                 <h2>Doświadczenie</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">2021 — obecnie</div>
-                        <div class="timeline-title">Konsultant / Inżynier Back-end</div>
-                        <div class="timeline-company">Projekty dla globalnej korporacji z sektora energetycznego</div>
-                        <p class="desc">Pracuję w międzynarodowym zespole Scrum przy projektach dla dużej amerykańskiej korporacji z branży energetycznej i naftowej. Odpowiadam za rozwój i utrzymanie API w środowisku Microsoft Azure oraz rozwiązywanie zgłoszeń użytkowników. Uczestniczyłem w projekcie budowy rozwiązania typu shale &amp; tight, obejmującego zarówno backend, jak i frontend, integrującego dane z wielu źródeł.</p>
+                        <div class="timeline-date">2026 — obecnie</div>
+                        <div class="timeline-title">Założyciel / Konsultant Cloud &amp; Back-end</div>
+                        <div class="timeline-company">Birchsoft.dev · Warszawa</div>
+                        <p class="desc">Prowadzę własną praktykę konsultingową, projektując i rozwijając rozwiązania chmurowe w Microsoft Azure. Buduję i utrzymuję API, integracje, potoki ETL oraz architektury bezserwerowe, wykorzystując C#, ASP.NET, Azure Functions, Data Factory, Service Bus, Synapse, Databricks, SQL i Python. Doradzam klientom w zakresie architektury, optymalizacji kosztów, modernizacji i migracji do chmury, a także wspieram zespoły deweloperskie w obszarze DevOps i CI/CD.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 — 2026</div>
+                        <div class="timeline-title">Konsultant, Back-end Developer</div>
+                        <div class="timeline-company">Avanade · Wrocław</div>
+                        <p class="desc">Rozwijałem systemy dla globalnej korporacji z sektora energetycznego i naftowego, wdrażając rozwiązania oparte o Azure Functions (Durable), Data Factory, Service Bus, Synapse, OSDU i Databricks. Projektuję i utrzymuję API oraz integracje w złożonych środowiskach enterprise, pracując w międzynarodowych zespołach Scrum, a także zajmuję się optymalizacją wydajności, refaktoryzacją i automatyzacją CI/CD.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 — 2023</div>
+                        <div class="timeline-title">Senior Analyst, Back-end Developer</div>
+                        <div class="timeline-company">Avanade · Kraków / Wrocław</div>
+                        <p class="desc">Rozpocząłem pracę w Avanade jako Senior Analyst i Back-end Developer, współtworząc tę samą platformę dla sektora energetycznego, zanim awansowałem na stanowisko konsultanta.</p>
                     </div>
                 </div>
 
                 <div class="cert-list">
+                    <span class="tag">Full Stack Developer</span>
                     <span class="tag">Azure Fundamentals (AZ-900)</span>
                     <span class="tag">Azure Developer Associate (AZ-204)</span>
                     <span class="tag">DevOps Engineer Expert (AZ-400)</span>
-                    <span class="tag">Azure AI Fundamentals (AI-900)</span>
                     <span class="tag">PCAP — Certified Associate Python Programmer</span>
                 </div>
             </section>
@@ -618,7 +639,7 @@
     </div>
 
     <!-- =================== ENGLISH VERSION =================== -->
-    <div data-lang-block data-lang="en">
+    <div data-lang-block data-lang="en" class="active">
         <header>
             <div class="header-top">
                 <div class="logo">
@@ -637,8 +658,8 @@
                     <a href="#experience">Experience</a>
                     <a href="#contact">Contact</a>
                     <span class="lang-switch">
-                        <button type="button" data-set-lang="pl">PL</button>
                         <button type="button" class="active" data-set-lang="en">EN</button>
+                        <button type="button" data-set-lang="pl">PL</button>
                     </span>
                 </div>
             </nav>
@@ -654,23 +675,28 @@
             <section id="about">
                 <h2>About</h2>
                 <div class="profile-summary">
-                    <p>I'm a back-end consultant and engineer specializing in the .NET ecosystem, Microsoft Azure, and data engineering. I work in international Scrum teams on projects for large organizations in the energy sector, delivering APIs, cloud functions, and solutions that integrate data from multiple sources. My approach combines strict clean-code standards with fully automated CI/CD delivery.</p>
+                    <p>Senior Back-End Developer and Cloud Consultant specializing in Microsoft Azure, API architecture, and enterprise integrations. Since 2026, I have been running my own company, Birchsoft.dev, where I design and deliver scalable cloud solutions, automation, and integration services for clients in the energy, industrial, and technology sectors.</p>
+                    <p style="margin-top: 1.25rem;">I bring more than five years of commercial experience from Avanade, working for a major energy &amp; oil corporation and building systems on Azure Functions (including Durable Functions), Azure Data Factory, Service Bus, Synapse, OSDU, and Databricks. I design, develop, and maintain complex APIs, integrations, and data-processing pipelines in high-availability environments.</p>
+                    <p style="margin-top: 1.25rem;">Before moving into IT, I spent 28 years in the Polish Air Force, coordinating military air traffic and working in crisis response at the Ministry of National Defense — an experience that shaped how I approach engineering: discipline, responsibility, and effective decision-making under pressure.</p>
                 </div>
                 <div class="grid">
                     <div class="card">
                         <h3>Enterprise Cloud</h3>
-                        <p>I design and deploy solutions on Microsoft Azure — from Azure Functions and Durable Functions to Data Factory and Service Bus — with a focus on high availability and cost optimization.</p>
+                        <p>I design and deploy solutions on Microsoft Azure — from Azure Functions (including Durable Functions) to Data Factory, Service Bus, Synapse, OSDU, and Databricks — with a focus on high availability and cost optimization.</p>
                         <div class="tech-tags">
                             <span class="tag">Azure</span>
                             <span class="tag">Azure Functions</span>
+                            <span class="tag">Databricks</span>
+                            <span class="tag">OSDU</span>
                         </div>
                     </div>
                     <div class="card">
                         <h3>Robust Back-end</h3>
-                        <p>I build and maintain enterprise-grade APIs in C# / .NET, integrating data from multiple sources while keeping reliability high under heavy transactional load.</p>
+                        <p>I build and maintain enterprise-grade APIs in C#, ASP.NET, and Blazor, integrating data from multiple sources while keeping reliability high under heavy transactional load.</p>
                         <div class="tech-tags">
-                            <span class="tag">.NET Core</span>
+                            <span class="tag">ASP.NET</span>
                             <span class="tag">C#</span>
+                            <span class="tag">Blazor</span>
                             <span class="tag">REST API</span>
                         </div>
                     </div>
@@ -682,11 +708,13 @@
                 <div class="grid">
                     <div class="card">
                         <h3>Data Engineering</h3>
-                        <p>I design data pipelines and flows in Azure Synapse Analytics and Data Factory, integrating data from multiple sources for reporting and analytics.</p>
+                        <p>I design data pipelines and flows using Azure Synapse Analytics, Data Factory, and Databricks, integrating data from multiple sources — including OSDU — for reporting and analytics.</p>
                         <div class="tech-tags">
                             <span class="tag">Synapse</span>
                             <span class="tag">Data Factory</span>
+                            <span class="tag">Databricks</span>
                             <span class="tag">SQL</span>
+                            <span class="tag">OSDU</span>
                         </div>
                     </div>
                     <div class="card">
@@ -708,8 +736,9 @@
                     </div>
                     <div class="card">
                         <h3>Full-Stack Support</h3>
-                        <p>I also take part in full-stack projects, building interfaces that support back-end systems and integrate data from multiple sources.</p>
+                        <p>I also take part in full-stack projects, building interfaces with Blazor and Angular that support back-end systems and integrate data from multiple sources.</p>
                         <div class="tech-tags">
+                            <span class="tag">Blazor</span>
                             <span class="tag">Angular</span>
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
@@ -722,18 +751,30 @@
                 <h2>Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">2021 — present</div>
-                        <div class="timeline-title">Consultant / Back-end Engineer</div>
-                        <div class="timeline-company">Projects for a global energy sector corporation</div>
-                        <p class="desc">I work in an international Scrum team on projects for a large US energy and oil corporation. I'm responsible for developing and maintaining APIs within the Microsoft Azure environment and resolving user-reported issues. I took part in building a shale &amp; tight solution covering both back-end and front-end, integrating data from multiple sources.</p>
+                        <div class="timeline-date">2026 — present</div>
+                        <div class="timeline-title">Founder / Cloud &amp; Back-end Consultant</div>
+                        <div class="timeline-company">Birchsoft.dev · Warsaw</div>
+                        <p class="desc">Running my own consulting practice, designing and developing cloud solutions on Microsoft Azure. Building and maintaining APIs, integrations, ETL pipelines, and serverless architectures using C#, ASP.NET, Azure Functions, Data Factory, Service Bus, Synapse, Databricks, SQL, and Python. Advising clients on architecture, cost optimization, modernization, and cloud migration, and supporting development teams with DevOps and CI/CD.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 — 2026</div>
+                        <div class="timeline-title">Consultant, Back-end Developer</div>
+                        <div class="timeline-company">Avanade · Wrocław</div>
+                        <p class="desc">Developing systems for a global energy &amp; oil corporation, implementing solutions with Azure Functions (Durable), Data Factory, Service Bus, Synapse, OSDU, and Databricks. Designing and maintaining APIs and integrations in complex enterprise environments, working in international Scrum teams, and driving performance optimization, refactoring, and CI/CD automation.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 — 2023</div>
+                        <div class="timeline-title">Senior Analyst, Back-end Developer</div>
+                        <div class="timeline-company">Avanade · Kraków / Wrocław</div>
+                        <p class="desc">Started at Avanade as a Senior Analyst and Back-end Developer, contributing to the same energy-sector platform before progressing into a Consultant role.</p>
                     </div>
                 </div>
 
                 <div class="cert-list">
+                    <span class="tag">Full Stack Developer</span>
                     <span class="tag">Azure Fundamentals (AZ-900)</span>
                     <span class="tag">Azure Developer Associate (AZ-204)</span>
                     <span class="tag">DevOps Engineer Expert (AZ-400)</span>
-                    <span class="tag">Azure AI Fundamentals (AI-900)</span>
                     <span class="tag">PCAP — Certified Associate Python Programmer</span>
                 </div>
             </section>
@@ -784,6 +825,15 @@
                     btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
                 });
                 document.documentElement.setAttribute('lang', lang);
+
+                // zamknij ewentualnie otwarte mobilne menu i przywróć scroll strony
+                document.querySelectorAll('.nav-links.open').forEach(function (nav) {
+                    nav.classList.remove('open');
+                });
+                document.querySelectorAll('.hamburger[aria-expanded="true"]').forEach(function (btn) {
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+                document.body.style.overflow = '';
             }
 
             buttons.forEach(function (btn) {
